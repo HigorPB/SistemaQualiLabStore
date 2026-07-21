@@ -1,0 +1,188 @@
+/* CSS propositalmente problemático para a atividade:
+   - sistema não responsivo;
+   - largura fixa grande;
+   - baixo contraste;
+   - regras repetidas;
+   - excesso de !important;
+   - organização ruim.
+*/
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f4f4f4;
+  color: #333;
+  min-width: 1280px; /* problema proposital: força largura mínima */
+}
+
+.topo {
+  background: #28425c;
+  color: white;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 1240px; /* problema proposital: largura fixa */
+  margin: 0 auto;
+}
+
+.topo h1 {
+  margin: 0;
+}
+
+.topo nav a {
+  color: #d5d5d5;
+  margin-left: 20px;
+  text-decoration: none;
+}
+
+.topo nav a:hover {
+  text-decoration: underline;
+}
+
+main {
+  width: 1200px; /* problema proposital: layout fixo */
+  margin: 20px auto;
+}
+
+.aviso {
+  background: #fff3cd;
+  border: 1px solid #ffeeba;
+  padding: 15px;
+  margin-bottom: 20px;
+}
+
+.login-card {
+  background: white;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 6px;
+  width: 1160px;
+}
+
+.painel {
+  background: white;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 6px;
+}
+
+.carrinho {
+  background: white;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 6px;
+}
+
+.checkout {
+  background: white;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 6px;
+}
+
+.relatorio {
+  background: white;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 6px;
+}
+
+.texto-ajuda {
+  color: #b8b8b8; /* problema proposital: contraste ruim */
+}
+
+input,
+select,
+button {
+  padding: 10px;
+  margin: 5px;
+  border: 1px solid #ccc;
+}
+
+input {
+  width: 260px;
+}
+
+button {
+  background: #28425c !important;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #1b2b3c !important;
+}
+
+.oculto {
+  display: none;
+}
+
+.grid-produtos {
+  display: grid;
+  grid-template-columns: 380px 380px 380px; /* problema proposital: grid fixo */
+  gap: 15px;
+}
+
+.card-produto {
+  background: white;
+  padding: 15px;
+  border-radius: 6px;
+  border: 1px solid #ddd;
+  min-height: 330px;
+  width: 350px;
+}
+
+.card-produto img {
+  width: 350px;
+  height: 150px;
+  object-fit: cover;
+  background: #ddd;
+}
+
+.card-produto h3 {
+  margin-bottom: 5px;
+}
+
+.preco {
+  font-weight: bold;
+  color: #0b6b3a;
+}
+
+.erro {
+  color: #c00;
+}
+
+.sucesso {
+  color: #0b6b3a;
+}
+
+.mensagem {
+  min-height: 20px;
+  font-weight: bold;
+}
+
+.item-carrinho {
+  background: #eee;
+  padding: 8px;
+  margin: 5px 0;
+}
+
+.total {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+footer {
+  text-align: center;
+  background: #28425c;
+  color: #ddd;
+  padding: 20px;
+  margin-top: 40px;
+  width: 1240px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Problema proposital: media query removida para o sistema não ser responsivo */

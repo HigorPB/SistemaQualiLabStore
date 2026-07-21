@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <!-- Problema proposital: sem meta viewport. O sistema NÃO deve ser responsivo. -->
+  <title>QualiLab - Loja Acadêmica</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topo">
+    <div>
+      <h1>QualiLab Store</h1>
+      <p>Sistema demonstrativo para avaliação de qualidade de software</p>
+    </div>
+    <nav>
+      <a href="#produtos">Produtos</a>
+      <a href="#carrinho">Carrinho</a>
+      <a href="#checkout">Checkout</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="aviso">
+      <strong>Atenção:</strong> este sistema foi criado para fins didáticos e contém problemas propositais de qualidade.
+      Os estudantes devem navegar, testar, registrar prints e elaborar um checklist avaliativo.
+    </section>
+
+    <section class="login-card" id="login">
+      <h2>Acesso do usuário</h2>
+      <p class="texto-ajuda">Use qualquer e-mail e senha para entrar.</p>
+
+      <!-- Problema proposital: envio por GET deixa a senha aparente na URL -->
+      <form method="GET" action="index.html" onsubmit="return entrarComGet()">
+        <input id="email" name="email" placeholder="Digite seu e-mail">
+        <input id="senha" name="senha" type="password" placeholder="Digite sua senha">
+        <button type="submit">Entrar</button>
+      </form>
+
+      <p id="loginMensagem" class="mensagem"></p>
+    </section>
+
+    <section id="areaSistema" class="oculto">
+      <section class="painel">
+        <h2>Bem-vindo(a), <span id="usuarioLogado"></span></h2>
+        <p>Escolha os produtos para montar seu pedido.</p>
+
+        <div class="filtros">
+          <input id="busca" placeholder="Buscar produto..." onkeyup="buscarProduto()">
+          <select id="ordenacao" onchange="ordenarProdutos()">
+            <option value="">Ordenar por</option>
+            <option value="menor">Menor preço</option>
+            <option value="maior">Maior preço</option>
+          </select>
+        </div>
+      </section>
+
+      <section id="produtos">
+        <h2>Produtos disponíveis</h2>
+        <p id="carregando">Carregando catálogo...</p>
+        <div id="listaProdutos" class="grid-produtos"></div>
+      </section>
+
+      <section id="carrinho" class="carrinho">
+        <h2>Carrinho</h2>
+        <p id="contadorCarrinho">Itens no carrinho: 0</p>
+        <div id="itensCarrinho"></div>
+        <p class="total">Total: R$ <span id="totalCarrinho">0,00</span></p>
+        <button onclick="limparCarrinho()">Limpar carrinho</button>
+      </section>
+
+      <section id="checkout" class="checkout">
+        <h2>Finalizar pedido</h2>
+
+        <input id="nome" placeholder="Nome">
+        <input id="cpf" placeholder="CPF">
+        <input id="cep" placeholder="CEP">
+        <input id="endereco" placeholder="Endereço">
+        <select id="pagamento">
+          <option value="">Pagamento</option>
+          <option value="pix">Pix</option>
+          <option value="cartao">Cartão</option>
+          <option value="boleto">Boleto</option>
+        </select>
+
+        <button onclick="finalizarPedido()">Finalizar compra</button>
+        <p id="checkoutMensagem" class="mensagem"></p>
+      </section>
+
+      <section class="relatorio">
+        <h2>Área de histórico</h2>
+        <p>Últimas ações do sistema:</p>
+        <ul id="logAcoes"></ul>
+      </section>
+    </section>
+  </main>
+
+  <footer>
+    <p>QualiLab Store © 2026 - Ambiente didático para Qualidade de Software</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
