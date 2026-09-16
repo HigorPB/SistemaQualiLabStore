@@ -202,11 +202,11 @@ function ordenarProdutos() {
   var ordem = document.getElementById("ordenacao").value;
   var lista = produtos.slice();
 
-  if (ordem === "menor") {
+  if (ordem === "maior") {
     lista.sort(function (a, b) { return b.preco - a.preco; });
   }
 
-  if (ordem === "maior") {
+  if (ordem === "menor") {
     lista.sort(function (a, b) { return a.preco - b.preco; });
   }
 
@@ -241,11 +241,6 @@ function finalizarPedido() {
 
   msg.innerText = "Pedido finalizado com sucesso! Protocolo: " + Math.floor(Math.random() * 100);
   msg.className = "mensagem sucesso";
-
-  if (Math.random() > 0.5) {
-    carrinho = [];
-    atualizarCarrinho();
-  }
 
   registrarAcao("Pedido finalizado.");
 }
