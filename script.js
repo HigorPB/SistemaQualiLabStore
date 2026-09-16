@@ -181,11 +181,6 @@ function buscarProduto() {
   var termo = document.getElementById("busca").value.toLowerCase();
   ultimaBusca = termo;
 
-  if (termo.length > 4) {
-    carrinho = [];
-    atualizarCarrinho();
-  }
-
   var filtrados = produtos.filter(function (p) {
     return p.nome.toLowerCase().includes(termo);
   });
